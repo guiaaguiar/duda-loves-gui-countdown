@@ -9,15 +9,15 @@ const PhotoGallery = () => {
   ];
 
   return (
-    <section className="grid grid-cols-3 gap-3 md:gap-6 lg:gap-8 my-16 max-w-4xl mx-auto">
+    <section className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-6 lg:gap-8 my-10 md:my-16 max-w-4xl mx-auto px-2 sm:px-0">
       {photos.map((photo, index) => (
         <div
           key={index}
-          className="photo-frame aspect-square rounded-2xl md:rounded-3xl p-2 md:p-3 transition-all duration-500 float-animation-delayed flex flex-col items-center justify-center cursor-pointer"
+          className="photo-frame aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl p-1.5 sm:p-2 md:p-3 transition-all duration-500 float-animation-delayed flex flex-col items-center justify-center cursor-pointer"
           style={{ animationDelay: `${index * 0.3}s` }}
         >
-          <span className="text-3xl md:text-5xl lg:text-6xl">{photo.emoji}</span>
-          <small className="text-silver/80 text-xs md:text-sm mt-2">
+          <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl">{photo.emoji}</span>
+          <small className="text-silver/80 text-[10px] sm:text-xs md:text-sm mt-1 sm:mt-2">
             {photo.label}
           </small>
         </div>
