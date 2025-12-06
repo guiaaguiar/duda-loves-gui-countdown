@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+
 interface LoveCardProps {
   onSurpriseClick: () => void;
 }
+
 const LoveCard = ({
   onSurpriseClick
 }: LoveCardProps) => {
@@ -11,18 +13,19 @@ const LoveCard = ({
     setShowSpecialMessage(true);
     onSurpriseClick();
   };
-  return <main className="glass-card rounded-2xl md:rounded-3xl p-5 sm:p-8 md:p-12 my-6 md:my-10 text-center float-animation mx-2 sm:mx-0">
+  return (
+    <main className="glass-card rounded-2xl md:rounded-3xl p-5 sm:p-8 md:p-12 my-6 md:my-10 text-center float-animation mx-2 sm:mx-0">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text-gold mb-6 md:mb-10">
         Minha Alma Gêmea 💕
       </h2>
 
       <div className="text-base sm:text-lg md:text-xl text-silver font-light leading-relaxed mb-8 md:mb-12 message-glow px-2">
-        <p>Maria, você é a mulher mais incrível que já conheci. Eu te amo tanto e sou tão louco por você que minha vida, cada dia se tornou mais colorido, mais doce, mais completo.</p>
+        <p>
+          Maria, você é a mulher mais incrível que já conheci. Eu te amo tanto e sou tão louco por você que minha vida não faz mais sentido sem ter você comigo, cada dia se tornou mais , mais com mais significado, mais propósito. Minha oração sempre vai ser para que possamos viver sempre a vontade do Senhor no nosso casamento e vida todinha juntos ❣️
+        </p>
         <br />
         <p>
-          Você é minha melodia favorita, meu porto seguro, minha inspiração diária. 
-          Com você descobri que o amor verdadeiro não é apenas um sentimento, 
-          é um lar, é paz, é a certeza de que encontrei minha pessoa para sempre! ❤️
+          Dividir a vida com você é um privilégio! Contigo descobri que o amor verdadeiro não é apenas um sentimento, é uma decisão. É, na verdade, a certeza de que encontrei minha pessoa para sempre! ❤️
         </p>
       </div>
 
@@ -36,17 +39,15 @@ const LoveCard = ({
           💖 Do Fundo Do Meu Coração 💖
         </h3>
         <p className="text-silver text-sm sm:text-base md:text-lg leading-relaxed text-center font-light relative z-10">
-          Maria Eduarda, você é o presente mais lindo que a vida me deu. 
-          Cada sorriso seu ilumina meu mundo, cada abraço seu me faz sentir em casa, 
-          cada "eu te amo" seu é música para minha alma.
+          Maria Eduarda, você é a resposta da minha oração mais secreta. Que ninguém nunca ouviu além do Senhor. Você é sal e luz nesse mundo! Só a tua presença muda o ambiente, e eu amo muito e adimiro isso você.
         </p>
         <br />
         <p className="text-silver text-sm sm:text-base md:text-lg leading-relaxed text-center font-light relative z-10">
-          Obrigado por ser minha companheira de sonhos, minha parceira de vida, 
-          minha melhor amiga e meu grande amor. Nestes 10 meses juntos, 
-          quero que saiba: você é tudo que sempre sonhei e muito mais! 💝
+          Obrigado por ser minha companheira, louvo a Deus pela sua vida! Minha parceira pavidatoda, minha melhor amiga e meu grande amor. Comemorando hoje 10 meses juntos, quero que saiba disso: você é tudo que sempre sonhei e muito mais! 💝
         </p>
       </div>
-    </main>;
+    </main>
+  );
 };
+
 export default LoveCard;
