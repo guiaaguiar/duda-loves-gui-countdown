@@ -1,12 +1,18 @@
 import foto1 from "@/assets/foto1.jpg";
 import foto2 from "@/assets/foto2.jpg";
 import foto3 from "@/assets/foto3.jpg";
+import foto4 from "@/assets/foto4.png";
+import foto5 from "@/assets/foto5.png";
+import foto6 from "@/assets/foto6.png";
 
 const PhotoGallery = () => {
   const photos = [
     { src: foto1, label: "Noite especial" },
     { src: foto2, label: "Gui e Pipoca" },
     { src: foto3, label: "Praia juntos" },
+    { src: foto4, label: "Beijo no São João" },
+    { src: foto5, label: "Festa em família" },
+    { src: foto6, label: "Minha princesa" },
   ];
 
   return (
