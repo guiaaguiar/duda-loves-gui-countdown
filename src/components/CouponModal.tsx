@@ -48,7 +48,7 @@ const CouponModal = ({ isOpen, onClose, step, onClaimClick }: CouponModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="glass-card border-2 border-primary/40 max-w-md mx-auto">
+      <DialogContent className="modal-card border-2 border-primary/40 max-w-[90vw] md:max-w-md mx-auto">
         {step === "announcement" ? (
           <>
             <DialogHeader>
