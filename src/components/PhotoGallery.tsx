@@ -1,11 +1,12 @@
+import foto1 from "@/assets/foto1.jpg";
+import foto2 from "@/assets/foto2.jpg";
+import foto3 from "@/assets/foto3.jpg";
+
 const PhotoGallery = () => {
   const photos = [
-    { emoji: "📸", label: "Foto 1" },
-    { emoji: "💕", label: "Foto 2" },
-    { emoji: "🌹", label: "Foto 3" },
-    { emoji: "✨", label: "Foto 4" },
-    { emoji: "💖", label: "Foto 5" },
-    { emoji: "🥰", label: "Foto 6" },
+    { src: foto1, label: "Noite especial" },
+    { src: foto2, label: "Gui e Pipoca" },
+    { src: foto3, label: "Praia juntos" },
   ];
 
   return (
@@ -13,13 +14,14 @@ const PhotoGallery = () => {
       {photos.map((photo, index) => (
         <div
           key={index}
-          className="photo-frame aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl p-1.5 sm:p-2 md:p-3 transition-all duration-500 float-animation-delayed flex flex-col items-center justify-center cursor-pointer"
+          className="photo-frame aspect-square rounded-xl sm:rounded-2xl md:rounded-3xl p-1 sm:p-1.5 md:p-2 transition-all duration-500 float-animation-delayed flex flex-col items-center justify-center cursor-pointer overflow-hidden"
           style={{ animationDelay: `${index * 0.3}s` }}
         >
-          <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl">{photo.emoji}</span>
-          <small className="text-silver/80 text-[10px] sm:text-xs md:text-sm mt-1 sm:mt-2">
-            {photo.label}
-          </small>
+          <img 
+            src={photo.src} 
+            alt={photo.label}
+            className="w-full h-full object-cover rounded-lg sm:rounded-xl md:rounded-2xl"
+          />
         </div>
       ))}
     </section>
