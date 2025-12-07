@@ -17,29 +17,22 @@ interface CouponModalProps {
 }
 
 const CouponModal = ({ isOpen, onClose, step, onClaimClick }: CouponModalProps) => {
-  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({ minutes: 5, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date("2025-12-07T23:59:59");
-
-    const updateCountdown = () => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
-
-      if (diff <= 0) {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
-
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      setTimeLeft({ hours, minutes, seconds });
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev.minutes === 0 && prev.seconds === 0) {
+          return prev;
+        }
+        
+        if (prev.seconds === 0) {
+          return { minutes: prev.minutes - 1, seconds: 59 };
+        }
+        
+        return { ...prev, seconds: prev.seconds - 1 };
+      });
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -69,15 +62,11 @@ const CouponModal = ({ isOpen, onClose, step, onClaimClick }: CouponModalProps) 
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle className="text-xl md:text-2xl font-bold gradient-text-special text-center leading-tight">
-                RESGATE AGORA SEU CUPOM DE DESCONTO, POR TEMPO LIMITADO!
+            <DialogTitle className="text-xl md:text-2xl font-bold gradient-text-special text-center leading-tight">
+                RESGATE AGORA SEU CUPOM DE -100% DE DESCONTO! POR TEMPO LIMITADO!
               </DialogTitle>
               <DialogDescription className="text-center mt-4">
                 <div className="flex justify-center gap-2 text-2xl md:text-3xl font-bold text-gold">
-                  <span className="bg-secondary/50 px-3 py-2 rounded-lg">
-                    {formatTime(timeLeft.hours)}
-                  </span>
-                  <span className="text-primary">:</span>
                   <span className="bg-secondary/50 px-3 py-2 rounded-lg">
                     {formatTime(timeLeft.minutes)}
                   </span>
@@ -86,7 +75,6 @@ const CouponModal = ({ isOpen, onClose, step, onClaimClick }: CouponModalProps) 
                     {formatTime(timeLeft.seconds)}
                   </span>
                 </div>
-                <p className="text-silver/60 text-xs mt-2">até 23:59 de 07/12/2025</p>
               </DialogDescription>
             </DialogHeader>
 
