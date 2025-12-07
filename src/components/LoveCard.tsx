@@ -29,7 +29,7 @@ const LoveCard = ({
         </p>
       </div>
 
-      <Button onClick={handleSurpriseClick} className="btn-glow shine-effect text-foreground font-semibold text-sm sm:text-lg md:text-xl px-6 sm:px-10 md:px-14 py-4 sm:py-6 md:py-7 rounded-full cursor-pointer transition-all duration-300 my-6 md:my-10">
+      <Button onClick={handleSurpriseClick} className="btn-glow shine-effect text-foreground font-semibold text-xs xs:text-sm sm:text-lg md:text-xl px-4 xs:px-6 sm:px-10 md:px-14 py-3 xs:py-4 sm:py-6 md:py-7 rounded-full cursor-pointer transition-all duration-300 my-6 md:my-10 whitespace-normal text-center leading-tight">
         ✨ Uma Surpresa Especial Para Você ✨
       </Button>
 
